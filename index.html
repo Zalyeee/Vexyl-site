@@ -1,172 +1,239 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vexyl</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vexyl</title>
 
-  <style>
-    :root {
-      --bg: #000;
-      --card: #111;
-      --text: #f5f5f5;
-      --muted: #aaa;
-      --white: #fff;
-    }
+<style>
+:root {
+  --bg: #000;
+  --card: #121212;
+  --text: #f5f5f5;
+  --muted: #aaa;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-    /* 🌌 Fundo estrelado */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        radial-gradient(1px 1px at 20% 30%, white, transparent),
-        radial-gradient(1px 1px at 70% 40%, white, transparent),
-        radial-gradient(1px 1px at 40% 80%, white, transparent),
-        radial-gradient(1px 1px at 90% 20%, white, transparent),
-        radial-gradient(1px 1px at 10% 60%, white, transparent);
-      background-size: 200px 200px;
-      opacity: 0.5;
-      z-index: -1;
-    }
+/* 🌌 Estrelas */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, white, transparent),
+    radial-gradient(1px 1px at 80% 30%, white, transparent),
+    radial-gradient(1px 1px at 40% 70%, white, transparent),
+    radial-gradient(1px 1px at 70% 80%, white, transparent),
+    radial-gradient(1px 1px at 20% 90%, white, transparent);
+  background-size: 200px 200px;
+  opacity: .5;
+  z-index: -1;
+}
 
-    header {
-      height: 60px;
-      display: flex;
-      align-items: center;
-      padding: 0 18px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.6);
-      z-index: 10;
-    }
+/* Header */
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
 
-    .menu-btn {
-      font-size: 26px;
-      cursor: pointer;
-      margin-right: 16px;
-    }
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 16px;
+}
 
-    .logo {
-      font-weight: 600;
-      letter-spacing: 3px;
-    }
+.logo {
+  font-weight: 600;
+  letter-spacing: 4px;
+}
 
-    /* 📂 Menu lateral */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -260px;
-      width: 260px;
-      height: 100vh;
-      background: #fff;
-      color: #000;
-      padding: 28px 22px;
-      transition: left .3s ease;
-      z-index: 20;
-    }
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+  color: #000;
+  padding: 26px 22px;
+  transition: left .3s ease;
+  z-index: 20;
+}
 
-    .sidebar.open {
-      left: 0;
-    }
+.sidebar.open { left: 0; }
 
-    .sidebar h3 {
-      margin-top: 0;
-      letter-spacing: 2px;
-    }
+.sidebar h3 {
+  margin-top: 0;
+  letter-spacing: 2px;
+}
 
-    .sidebar a {
-      display: block;
-      text-decoration: none;
-      color: #000;
-      margin: 16px 0;
-      font-weight: 500;
-    }
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  margin: 16px 0;
+  font-weight: 500;
+}
 
-    .close-btn {
-      margin-top: 30px;
-      padding: 12px;
-      border-radius: 12px;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      cursor: pointer;
-      font-weight: 600;
-    }
+.close-btn {
+  margin-top: 30px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
 
-    main {
-      padding: 120px 20px 40px;
-      display: flex;
-      justify-content: center;
-    }
+/* Conteúdo */
+main {
+  padding: 120px 20px 40px;
+  display: flex;
+  justify-content: center;
+}
 
-    .card {
-      background: rgba(20,20,20,0.9);
-      border-radius: 18px;
-      padding: 28px;
-      max-width: 420px;
-      box-shadow: 0 0 40px rgba(255,255,255,0.05);
-    }
+.card {
+  background: rgba(18,18,18,.9);
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 420px;
+  box-shadow: 0 0 40px rgba(255,255,255,.05);
+}
 
-    .card h1 {
-      margin-top: 0;
-      font-size: 32px;
-    }
+.card h1 {
+  margin-top: 0;
+  font-size: 30px;
+}
 
-    .card p {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-  </style>
+.card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.popup-box {
+  background: rgba(20,20,20,.9);
+  backdrop-filter: blur(16px);
+  padding: 28px;
+  border-radius: 22px;
+  width: 90%;
+  max-width: 340px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,255,255,.08);
+}
+
+.popup-icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.popup-box h2 {
+  margin: 6px 0;
+}
+
+.popup-box p {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.popup-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  font-weight: 600;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <div class="logo">VEXYL</div>
-  </header>
+<header>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="logo">VEXYL</div>
+</header>
 
-  <nav class="sidebar" id="sidebar">
-    <h3>🗞 VEXYL</h3>
-    <a href="#">Início</a>
-    <a href="#">Loja</a>
-    <a href="#">Assinatura</a>
-    <a href="#">Sobre</a>
+<nav class="sidebar" id="sidebar">
+  <h3>🗞 VEXYL</h3>
+  <a href="#">Início</a>
+  <a href="#">Loja</a>
+  <a href="#">Assinatura</a>
+  <a href="#">Links</a>
+  <a href="#">Sobre</a>
+  <div class="close-btn" onclick="toggleMenu()">Voltar</div>
+</nav>
 
-    <div class="close-btn" onclick="toggleMenu()">Voltar</div>
-  </nav>
+<main>
+  <div class="card">
+    <h1>Olá 👋</h1>
+    <p id="texto">
+      Seja bem vind* ao site do Vexyl.
+    </p>
+  </div>
+</main>
 
-  <main>
-    <div class="card">
-      <h1>Olá 👋</h1>
-      <p>
-        Olá, seja bem vind* ao site do Vexyl!  
-        Espero que goste do site.  
-        Caso seja necessário, novas funcionalidades
-        poderão ser implementadas futuramente.
-      </p>
-    </div>
-  </main>
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <div class="popup-icon">🗞</div>
+    <h2>Antes de começar</h2>
+    <p>Como você prefere ser chamad*?</p>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("sidebar").classList.toggle("open");
-    }
-  </script>
+    <button onclick="setGenero('homem')">Ele / dele</button>
+    <button onclick="setGenero('mulher')">Ela / dela</button>
+    <button onclick="setGenero('outro')">El* / del*</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("sidebar").classList.toggle("open");
+}
+
+function setGenero(tipo) {
+  let bemVindo = "bem vind*";
+  if (tipo === "homem") bemVindo = "bem-vindo";
+  if (tipo === "mulher") bemVindo = "bem-vinda";
+
+  document.getElementById("texto").innerText =
+    `Olá, seja ${bemVindo} ao site do Vexyl.
+O site tem várias coisas, como loja e assinaturas para divulgação.
+Caso queira saber mais, clique nos três riscos na lateral para acessar o menu.`;
+
+  document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
