@@ -97,6 +97,17 @@
       font-weight: 500;
     }
 
+    .close-btn {
+      margin-top: 30px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
     main {
       padding: 120px 20px 40px;
       display: flex;
@@ -120,23 +131,6 @@
       color: var(--muted);
       line-height: 1.6;
     }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 22px;
-      background: #fff;
-      color: #000;
-      border-radius: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(255,255,255,0.2);
-    }
   </style>
 </head>
 <body>
@@ -151,19 +145,20 @@
     <a href="#">Início</a>
     <a href="#">Loja</a>
     <a href="#">Assinatura</a>
-    <a href="#">Sobre o Admin</a>
+    <a href="#">Sobre</a>
+
+    <div class="close-btn" onclick="toggleMenu()">Voltar</div>
   </nav>
 
   <main>
     <div class="card">
-      <h1>Bem-vindo ao Vexyl</h1>
+      <h1>Olá 👋</h1>
       <p>
-        Vexyl é um projeto independente focado em análises,
-        serviços e suporte direto. Tudo aqui é pensado
-        para ser simples, funcional e objetivo.
+        Olá, seja bem vind* ao site do Vexyl!  
+        Espero que goste do site.  
+        Caso seja necessário, novas funcionalidades
+        poderão ser implementadas futuramente.
       </p>
-
-      <a href="#" class="btn">Área do Administrador</a>
     </div>
   </main>
 
