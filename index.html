@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Vexyl</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Ícones -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<meta charset="UTF-8" />
+<title>Vexyl's place</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- Overlay -->
-<div id="overlay" onclick="closeMenu()"></div>
-
-<!-- Botão menu -->
-<div class="menu-btn" onclick="toggleMenu()">
-  <i class="ri-menu-line"></i>
-</div>
-
-<!-- Menu lateral -->
-<nav id="menu">
-  <a href="#inicio">Início</a>
-  <a href="#site">Site</a>
-  <a href="404.html">Grupo</a>
-  <a href="404.html">Contato</a>
-</nav>
-
-<!-- Partículas -->
+<!-- PARTICLES -->
 <canvas id="particles"></canvas>
 
-<!-- Conteúdo -->
-<section id="inicio" class="section">
-  <h1>Vexyl</h1>
-  <p>Olá, seja bem-vind* ao site do Vexyl.</p>
-</section>
+<!-- MENU LATERAL -->
+<div id="menu" class="menu">
+  <button class="close" onclick="toggleMenu()">✖</button>
+  <a onclick="navigate('home')">Início</a>
+  <a onclick="navigate('stories')">🗞 Histórias</a>
+  <a onclick="navigate('subs')">Assinaturas</a>
+  <a onclick="navigate('links')">Links</a>
+  <a onclick="navigate('config')">Configurações</a>
+</div>
 
-<section id="site" class="section">
-  <h2>Sobre o site</h2>
-  <p>Loja, assinaturas, divulgação e muito mais em breve.</p>
-</section>
+<button class="menuBtn" onclick="toggleMenu()">☰</button>
 
-<script src="script.js"></script>
-  <script type="module" src="firebase.js"></script>
+<!-- CONTEÚDO -->
+<main id="content"></main>
+
+<!-- POPUP GÊNERO -->
+<div id="genderPopup" class="popup">
+  <div class="popupBox">
+    <h3>Como você prefere?</h3>
+    <button onclick="setGender('m')">Ele / Dele</button>
+    <button onclick="setGender('f')">Ela / Dela</button>
+    <button onclick="setGender('n')">Elu / Delu</button>
+  </div>
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script src="particles.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
