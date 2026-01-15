@@ -5,10 +5,14 @@
   font-family: Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: black;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* Partículas */
@@ -18,9 +22,9 @@ body {
   z-index: -1;
 }
 
-/* Conteúdo */
-main {
-  height: 100vh;
+/* Seções */
+.section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,51 +32,72 @@ main {
   text-align: center;
 }
 
-h1 {
-  font-size: 3rem;
-}
-
-p {
-  opacity: 0.8;
-}
-
-/* Botão ☰ */
+/* Menu botão */
 .menu-btn {
   position: fixed;
   top: 20px;
   left: 20px;
-  font-size: 2rem;
+  font-size: 32px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1001;
 }
 
-/* Menu lateral */
+/* Menu */
 #menu {
   position: fixed;
   top: 0;
-  left: -220px;
-  width: 200px;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
+  left: -260px;
+  width: 240px;
+  height: 100vh;
+  background: rgba(10,10,10,0.95);
+  padding: 90px 24px;
   display: flex;
   flex-direction: column;
-  padding: 80px 20px;
-  transition: 0.3s;
-  z-index: 9;
+  gap: 24px;
+  transition: 0.35s ease;
+  z-index: 1000;
+}
+
+#menu.active {
+  left: 0;
 }
 
 #menu a {
   color: white;
   text-decoration: none;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
+  font-size: 18px;
+  position: relative;
 }
 
-#menu a:hover {
-  color: #aaa;
-}
-
-/* Menu ativo */
-#menu.active {
+/* Linha hover */
+#menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
   left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+#menu a:hover::after {
+  width: 100%;
+}
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
