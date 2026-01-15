@@ -1,50 +1,61 @@
-// MENU
-function toggleMenu() {
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
+import { auth } from "./firebase.js"
+
+const content = document.getElementById("content")
+
+window.toggleMenu = () =>
+  document.getElementById("menu").classList.toggle("open")
+
+window.navigate = page => {
+  toggleMenu()
+  if (page === "home") {
+    const g = localStorage.getItem("gender") || "*"
+    const word = g === "m" ? "bem-vindo" : g === "f" ? "bem-vinda" : "bem vind*"
+
+    content.innerHTML = `
+      <h1>Olá! Seja ${word} ao site do Vexyl's place!</h1>
+      <p>Deslize para baixo para explorar ✨</p>
+    `
+  }
+
+  if (page === "stories") {
+    content.innerHTML = `
+      <h2>🗞 Histórias & Fofocas</h2>
+      <p>Aqui você poderá publicar histórias, análises ou textos.</p>
+    `
+  }
+
+  if (page === "subs") {
+    content.innerHTML = `<h2>Assinaturas</h2><p>Em breve…</p>`
+  }
+
+  if (page === "links") {
+    content.innerHTML = `
+      <h2>Links</h2>
+      <a href="#">Canal</a><br>
+      <a href="#">Grupo</a><br>
+      <a href="#">Instagram</a>
+    `
+  }
+
+  if (page === "config") {
+    content.innerHTML = `
+      <h2>Configurações</h2>
+      <button onclick="toggleTheme()">Alternar tema</button>
+    `
+  }
 }
 
-function closeMenu() {
-  menu.classList.remove("active");
-  overlay.classList.remove("active");
+window.toggleTheme = () => {
+  document.body.classList.toggle("dark")
 }
 
-// PARTÍCULAS SIMPLES
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-let particles = [];
-
-for (let i = 0; i < 120; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2,
-    vx: Math.random() - 0.5,
-    vy: Math.random() - 0.5
-  });
+window.setGender = g => {
+  localStorage.setItem("gender", g)
+  document.getElementById("genderPopup").style.display = "none"
+  navigate("home")
 }
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+if (!localStorage.getItem("gender"))
+  document.getElementById("genderPopup").style.display = "flex"
 
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-
-    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "white";
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
-}
-
-animate();
+navigate("home")
