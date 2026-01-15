@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Vexyl</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Ícones -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Partículas -->
-  <canvas id="particles"></canvas>
+<!-- Overlay -->
+<div id="overlay" onclick="closeMenu()"></div>
 
-  <!-- Botão menu -->
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<!-- Botão menu -->
+<div class="menu-btn" onclick="toggleMenu()">
+  <i class="ri-menu-line"></i>
+</div>
 
-  <!-- Menu lateral -->
-  <nav id="menu">
-    <a href="#">Início</a>
-    <a href="https://google.com" target="_blank">Site</a>
-    <a href="#">Grupo</a>
-    <a href="#">Contato</a>
-  </nav>
+<!-- Menu lateral -->
+<nav id="menu">
+  <a href="#inicio">Início</a>
+  <a href="#site">Site</a>
+  <a href="404.html">Grupo</a>
+  <a href="404.html">Contato</a>
+</nav>
 
-  <!-- Conteúdo -->
-  <main>
-    <h1>Vexyl</h1>
-    <p>Olá, seja bem-vind* ao site do Vexyl.</p>
-  </main>
+<!-- Partículas -->
+<canvas id="particles"></canvas>
 
-  <script src="script.js"></script>
+<!-- Conteúdo -->
+<section id="inicio" class="section">
+  <h1>Vexyl</h1>
+  <p>Olá, seja bem-vind* ao site do Vexyl.</p>
+</section>
+
+<section id="site" class="section">
+  <h2>Sobre o site</h2>
+  <p>Loja, assinaturas, divulgação e muito mais em breve.</p>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
