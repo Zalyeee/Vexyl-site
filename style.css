@@ -9,53 +9,70 @@ body {
   background: black;
   color: white;
   overflow: hidden;
-  height: 100vh;
 }
 
-/* Centralização REAL no mobile */
-.center {
+/* Partículas */
+#particles {
   position: fixed;
   inset: 0;
+  z-index: -1;
+}
+
+/* Conteúdo */
+main {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 2;
-  padding: 20px;
 }
 
-.center h1 {
+h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
 }
 
-.center p {
-  opacity: 0.85;
-  max-width: 300px;
+p {
+  opacity: 0.8;
 }
 
-/* Partículas */
-.particles {
+/* Botão ☰ */
+.menu-btn {
   position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
 }
 
-.particle {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 6px white;
-  animation: subir linear infinite;
+/* Menu lateral */
+#menu {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px;
+  transition: 0.3s;
+  z-index: 9;
 }
 
-@keyframes subir {
-  from {
-    transform: translateY(100vh);
-  }
-  to {
-    transform: translateY(-120vh);
-  }
+#menu a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+#menu a:hover {
+  color: #aaa;
+}
+
+/* Menu ativo */
+#menu.active {
+  left: 0;
 }
