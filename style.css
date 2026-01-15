@@ -12,13 +12,17 @@ body {
   height: 100vh;
 }
 
+/* Centralização REAL no mobile */
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
+  padding: 20px;
 }
 
 .center h1 {
@@ -27,34 +31,31 @@ body {
 }
 
 .center p {
-  opacity: 0.8;
+  opacity: 0.85;
+  max-width: 300px;
 }
 
+/* Partículas */
 .particles {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .particle {
   position: absolute;
   background: white;
   border-radius: 50%;
-  opacity: 0.6;
-  animation:
-    subir linear infinite,
-    piscar 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 6px white;
+  animation: subir linear infinite;
 }
 
 @keyframes subir {
-  from { transform: translateY(0); }
-  to { transform: translateY(-120vh); }
-}
-
-@keyframes piscar {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
 }
