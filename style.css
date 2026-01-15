@@ -9,31 +9,52 @@ body {
   background: black;
   color: white;
   overflow: hidden;
+  height: 100vh;
 }
 
-/* CANVAS DAS ESTRELAS */
-#stars {
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.center h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.center p {
+  opacity: 0.8;
+}
+
+.particles {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
-/* CONTEÚDO */
-.content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  margin-top: 40vh;
+.particle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation:
+    subir linear infinite,
+    piscar 2s ease-in-out infinite alternate;
 }
 
-h1 {
-  font-size: 3rem;
-  letter-spacing: 2px;
+@keyframes subir {
+  from { transform: translateY(0); }
+  to { transform: translateY(-120vh); }
 }
 
-p {
-  opacity: 0.8;
+@keyframes piscar {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
 }
