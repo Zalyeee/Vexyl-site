@@ -1,22 +1,49 @@
-const container = document.querySelector(".particles")
-
-const total = window.innerWidth < 600 ? 80 : 150
-
-for (let i = 0; i < total; i++) {
-  const star = document.createElement("div")
-  star.className = "particle"
-
-  const size = Math.random() * 2.5 + 1.5
-  star.style.width = size + "px"
-  star.style.height = size + "px"
-
-  star.style.left = Math.random() * 100 + "vw"
-  star.style.top = Math.random() * 100 + "vh"
-
-  star.style.opacity = Math.random() * 0.8 + 0.2
-
-  star.style.animationDuration =
-    (Math.random() * 20 + 10) + "s"
-
-  container.appendChild(star)
+// MENU
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
 }
+
+// PARTÍCULAS
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2,
+    dx: (Math.random() - 0.5) * 0.3,
+    dy: (Math.random() - 0.5) * 0.3
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
