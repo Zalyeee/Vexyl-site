@@ -1,103 +1,77 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+:root {
+  --bg: #f5f6fa;
+  --text: #111;
+  --card: rgba(255,255,255,.8);
 }
 
-html {
-  scroll-behavior: smooth;
+body.dark {
+  --bg: #0b0b0b;
+  --text: #eee;
+  --card: rgba(20,20,20,.8);
 }
 
 body {
-  background: black;
-  color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
-/* Partículas */
-#particles {
+canvas {
   position: fixed;
   inset: 0;
   z-index: -1;
 }
 
-/* Seções */
-.section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Menu botão */
-.menu-btn {
+.menu {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 32px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-/* Menu */
-#menu {
-  position: fixed;
-  top: 0;
   left: -260px;
-  width: 240px;
-  height: 100vh;
-  background: rgba(10,10,10,0.95);
-  padding: 90px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  transition: 0.35s ease;
-  z-index: 1000;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  transition: .3s;
 }
 
-#menu.active {
-  left: 0;
+.menu a {
+  display: block;
+  margin: 12px 0;
+  cursor: pointer;
 }
 
-#menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  position: relative;
+.menu.open { left: 0; }
+
+.menuBtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
 }
 
-/* Linha hover */
-#menu a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: white;
-  transition: 0.3s;
+.close {
+  float: right;
 }
 
-#menu a:hover::after {
-  width: 100%;
+main {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* Overlay */
-#overlay {
+.popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s;
-  z-index: 999;
+  background: rgba(0,0,0,.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
-#overlay.active {
-  opacity: 1;
-  pointer-events: all;
+.popupBox {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
 }
