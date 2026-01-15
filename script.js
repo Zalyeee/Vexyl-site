@@ -1,46 +1,18 @@
-const canvas = document.getElementById("stars")
-const ctx = canvas.getContext("2d")
+const container = document.querySelector(".particles")
 
-let w, h
-let stars = []
+for (let i = 0; i < 150; i++) {
+  const star = document.createElement("div")
+  star.className = "particle"
 
-function resize() {
-  w = canvas.width = window.innerWidth
-  h = canvas.height = window.innerHeight
+  const size = Math.random() * 2 + 1
+  star.style.width = size + "px"
+  star.style.height = size + "px"
+
+  star.style.left = Math.random() * 100 + "vw"
+  star.style.top = Math.random() * 100 + "vh"
+
+  star.style.animationDuration =
+    (Math.random() * 20 + 5) + "s"
+
+  container.appendChild(star)
 }
-window.addEventListener("resize", resize)
-resize()
-
-function createStars() {
-  stars = []
-  for (let i = 0; i < 150; i++) {
-    stars.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      radius: Math.random() * 1.5,
-      speed: Math.random() * 0.3 + 0.1
-    })
-  }
-}
-createStars()
-
-function drawStars() {
-  ctx.clearRect(0, 0, w, h)
-  ctx.fillStyle = "white"
-
-  stars.forEach(star => {
-    ctx.beginPath()
-    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2)
-    ctx.fill()
-
-    star.y += star.speed
-    if (star.y > h) {
-      star.y = 0
-      star.x = Math.random() * w
-    }
-  })
-
-  requestAnimationFrame(drawStars)
-}
-
-drawStars()
