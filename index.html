@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Vexyl’s place</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vexyl's place</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script type="module" src="firebase.js"></script>
 </head>
 <body>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <!-- CANVAS DAS PARTÍCULAS -->
+  <canvas id="particles"></canvas>
 
-<div id="menu" class="menu">
-  <a href="index.html">Início</a>
-  <a href="assinaturas.html">Assinaturas</a>
-  <a href="login.html">Login</a>
-</div>
+  <!-- MENU -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<div class="container">
-  <div class="card">
-    <h2>Olá! Seja bem-vind* ao site do Vexyl’s place!</h2>
-    <p>
-      Aqui tem várias coisas onde você pode explorar!
-      <br>(Deslize pra baixo para saber mais!)
-    </p>
-  </div>
+  <nav id="sideMenu">
+    <a href="index.html">Início</a>
+    <a href="assinaturas.html">Assinaturas</a>
+    <a href="links.html">Links</a>
+  </nav>
 
-  <div class="card">
-    <h3>Sobre o site</h3>
-    <p>
-      O site do canal <b>Vexyl’s place</b>!  
-      Aqui temos a loja, as assinaturas e os links (grupos, canal, Instagram e etc...).  
-      Fique à vontade para explorar o site!
-    </p>
-  </div>
-</div>
+  <!-- CONTEÚDO -->
+  <main>
+    <section class="card">
+      <h1>Olá! Seja bem-vind* ao site do Vexyl's place!</h1>
+      <p>
+        Aqui tem várias coisas onde você pode explorar!<br>
+        (Deslize pra baixo para saber mais!)
+      </p>
+    </section>
 
+    <section class="card">
+      <h2>Sobre o site</h2>
+      <p>
+        O site do canal <b>Vexyl's place</b>!  
+        Aqui temos a loja, as assinaturas e os links
+        (grupos, canal, Instagram e etc...).  
+        Fique à vontade para explorar o site!
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
