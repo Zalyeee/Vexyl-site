@@ -1,161 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Assinaturas | Vexyl's place</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
-      color: #fff;
-      min-height: 100vh;
-    }
-
-    header {
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #222;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-
-    .aviso {
-      background: #111;
-      border-left: 4px solid #ffcc00;
-      padding: 15px;
-      margin-bottom: 30px;
-      font-size: 14px;
-    }
-
-    .planos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
-
-    .plano {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .plano h2 {
-      margin-top: 0;
-    }
-
-    .plano p {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .plano button {
-      margin-top: 15px;
-      padding: 12px;
-      width: 100%;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background: #fff;
-      color: #000;
-      font-weight: bold;
-    }
-
-    .plano button:hover {
-      opacity: 0.85;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 12px;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Assinaturas • Vexyl</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h1>Assinaturas</h1>
-</header>
-
 <div class="container">
+  <div class="card">
+    <h2>Planos disponíveis</h2>
 
-  <div class="aviso">
-    ⚠️ <strong>Aviso:</strong> Todas as assinaturas precisam de login,
-    ter um canal ou grupo e passar por análise para que possam ser ativadas.
-  </div>
+    <p><b>Plano Grátis</b> – 2 divulgações/mês</p>
+    <p><b>Plano Mini</b> – 4 divulgações/mês</p>
+    <p><b>Plano Médio</b> – 8 divulgações/mês</p>
+    <p><b>Plano Master</b> – divulgação diária</p>
 
-  <div class="planos">
-
-    <div class="plano">
-      <h2>🆓 Plano Grátis</h2>
-      <p>
-        R$0 / mês<br><br>
-        • Divulgação 2 vezes no mês<br>
-        • A partir do dia da assinatura
-      </p>
-      <button onclick="assinar('GRATIS')">Assinar</button>
-    </div>
-
-    <div class="plano">
-      <h2>✨ Plano Mini</h2>
-      <p>
-        R$5 / mês<br><br>
-        • Divulgação 4 vezes no mês<br>
-        • 1 vez por semana
-      </p>
-      <button onclick="assinar('MINI')">Assinar</button>
-    </div>
-
-    <div class="plano">
-      <h2>🔥 Plano Médio</h2>
-      <p>
-        R$10 / mês<br><br>
-        • Divulgação 8 vezes no mês<br>
-        • 2 vezes por semana
-      </p>
-      <button onclick="assinar('MEDIO')">Assinar</button>
-    </div>
-
-    <div class="plano">
-      <h2>👑 Plano Master</h2>
-      <p>
-        R$15 / mês<br><br>
-        • Divulgação todos os dias<br>
-        • Prioridade máxima
-      </p>
-      <button onclick="assinar('MASTER')">Assinar</button>
-    </div>
-
+    <p>⚠️ Todas as assinaturas passam por análise.</p>
   </div>
 </div>
 
-<footer>
-  © Vexyl's place
-</footer>
+<script type="module">
+import { auth } from "./firebase.js";
+import { onAuthStateChanged } from
+"https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-<script>
-  function assinar(plano) {
-    const numeroBot = "5532998258844"
-    const mensagem = `ASSINATURA_${plano}`
-    window.location.href =
-      `https://wa.me/${numeroBot}?text=${encodeURIComponent(mensagem)}`
-  }
+onAuthStateChanged(auth, user => {
+  if (!user) location.href = "login.html";
+});
 </script>
 
 </body>
