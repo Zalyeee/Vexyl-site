@@ -1,61 +1,49 @@
-import { auth } from "./firebase.js"
-
-const content = document.getElementById("content")
-
-window.toggleMenu = () =>
-  document.getElementById("menu").classList.toggle("open")
-
-window.navigate = page => {
-  toggleMenu()
-  if (page === "home") {
-    const g = localStorage.getItem("gender") || "*"
-    const word = g === "m" ? "bem-vindo" : g === "f" ? "bem-vinda" : "bem vind*"
-
-    content.innerHTML = `
-      <h1>Olá! Seja ${word} ao site do Vexyl's place!</h1>
-      <p>Deslize para baixo para explorar ✨</p>
-    `
-  }
-
-  if (page === "stories") {
-    content.innerHTML = `
-      <h2>🗞 Histórias & Fofocas</h2>
-      <p>Aqui você poderá publicar histórias, análises ou textos.</p>
-    `
-  }
-
-  if (page === "subs") {
-    content.innerHTML = `<h2>Assinaturas</h2><p>Em breve…</p>`
-  }
-
-  if (page === "links") {
-    content.innerHTML = `
-      <h2>Links</h2>
-      <a href="#">Canal</a><br>
-      <a href="#">Grupo</a><br>
-      <a href="#">Instagram</a>
-    `
-  }
-
-  if (page === "config") {
-    content.innerHTML = `
-      <h2>Configurações</h2>
-      <button onclick="toggleTheme()">Alternar tema</button>
-    `
-  }
+// MENU
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  menu.style.left = menu.style.left === "0px" ? "-220px" : "0px";
 }
 
-window.toggleTheme = () => {
-  document.body.classList.toggle("dark")
+// PARTÍCULAS
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: (Math.random() - 0.5) * 0.4,
+    dy: (Math.random() - 0.5) * 0.4
+  });
 }
 
-window.setGender = g => {
-  localStorage.setItem("gender", g)
-  document.getElementById("genderPopup").style.display = "none"
-  navigate("home")
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
 }
 
-if (!localStorage.getItem("gender"))
-  document.getElementById("genderPopup").style.display = "flex"
-
-navigate("home")
+animate();
