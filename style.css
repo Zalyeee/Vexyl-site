@@ -1,77 +1,63 @@
-:root {
-  --bg: #f5f6fa;
-  --text: #111;
-  --card: rgba(255,255,255,.8);
-}
-
-body.dark {
-  --bg: #0b0b0b;
-  --text: #eee;
-  --card: rgba(20,20,20,.8);
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
+  background: #f6f7f9;
+  color: #222;
 }
 
-canvas {
+header {
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menu-btn {
   position: fixed;
-  inset: 0;
-  z-index: -1;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .menu {
   position: fixed;
   left: -260px;
   top: 0;
-  width: 260px;
+  width: 250px;
   height: 100%;
-  background: var(--card);
-  backdrop-filter: blur(12px);
-  padding: 20px;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,.1);
   transition: .3s;
+  padding: 20px;
 }
 
 .menu a {
   display: block;
-  margin: 12px 0;
-  cursor: pointer;
+  margin: 15px 0;
+  text-decoration: none;
+  color: #333;
 }
 
-.menu.open { left: 0; }
-
-.menuBtn {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 24px;
+.menu.open {
+  left: 0;
 }
 
-.close {
-  float: right;
+.container {
+  padding: 60px 20px;
 }
 
-main {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.6);
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.popupBox {
+.card {
   background: #fff;
-  padding: 20px;
   border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #222;
+  color: #fff;
 }
