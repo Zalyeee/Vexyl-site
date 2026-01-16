@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<title>Vexyl's place</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Vexyl’s place</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
-
 <body>
 
-<!-- PARTICLES -->
-<canvas id="particles"></canvas>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<!-- MENU LATERAL -->
 <div id="menu" class="menu">
-  <button class="close" onclick="toggleMenu()">✖</button>
-  <a onclick="navigate('home')">Início</a>
-  <a onclick="navigate('stories')">🗞 Histórias</a>
-  <a onclick="navigate('subs')">Assinaturas</a>
-  <a onclick="navigate('links')">Links</a>
-  <a onclick="navigate('config')">Configurações</a>
+  <a href="index.html">Início</a>
+  <a href="assinaturas.html">Assinaturas</a>
+  <a href="login.html">Login</a>
 </div>
 
-<button class="menuBtn" onclick="toggleMenu()">☰</button>
+<div class="container">
+  <div class="card">
+    <h2>Olá! Seja bem-vind* ao site do Vexyl’s place!</h2>
+    <p>
+      Aqui tem várias coisas onde você pode explorar!
+      <br>(Deslize pra baixo para saber mais!)
+    </p>
+  </div>
 
-<!-- CONTEÚDO -->
-<main id="content"></main>
-
-<!-- POPUP GÊNERO -->
-<div id="genderPopup" class="popup">
-  <div class="popupBox">
-    <h3>Como você prefere?</h3>
-    <button onclick="setGender('m')">Ele / Dele</button>
-    <button onclick="setGender('f')">Ela / Dela</button>
-    <button onclick="setGender('n')">Elu / Delu</button>
+  <div class="card">
+    <h3>Sobre o site</h3>
+    <p>
+      O site do canal <b>Vexyl’s place</b>!  
+      Aqui temos a loja, as assinaturas e os links (grupos, canal, Instagram e etc...).  
+      Fique à vontade para explorar o site!
+    </p>
   </div>
 </div>
 
-<script type="module" src="firebase.js"></script>
-<script src="particles.js"></script>
-<script type="module" src="script.js"></script>
 </body>
 </html>
