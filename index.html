@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Vexyl's Place</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vexyl</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<canvas id="particles"></canvas>
+<div id="menuBtn" class="menu-btn">☰</div>
 
-<button id="menu-btn">☰</button>
-
-<nav id="side-menu">
+<nav id="menu">
   <a href="index.html">Início</a>
   <a href="assinaturas.html">Assinaturas</a>
-  <a href="login.html">Login</a>
-  <a href="registro.html">Registro</a>
+  <a href="login.html" id="loginLink">Login</a>
+  <a href="registro.html" id="registroLink">Registro</a>
+  <a href="#" id="logoutBtn" style="display:none">Logout</a>
 </nav>
 
 <main>
@@ -24,12 +24,12 @@
     <p>Aqui você encontra assinaturas, links e projetos do canal.</p>
   </div>
 
-  <div class="card">
+  <div class="card red">
     <h2>Sobre o site</h2>
-    <p>O site do canal Vexyl's place!</p>
+    <p>O site do canal Vexyl's place! Fique à vontade para explorar!</p>
   </div>
 </main>
 
-<script src="main.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
