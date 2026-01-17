@@ -2,51 +2,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Assinaturas</title>
+  <title>Assinaturas • Vexyl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="particles"></canvas>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-<header>
-  <button class="menu-btn">≡</button>
-</header>
-
-<nav>
+<nav class="menu" id="menu">
   <a href="index.html">🏠 Início</a>
   <a href="assinaturas.html">💳 Assinaturas</a>
   <a href="links.html">🔗 Links</a>
-  <a href="login.html">🔐 Login</a>
 </nav>
 
-<div class="container">
+<main>
+  <h1>Assinaturas</h1>
 
   <div class="card">
-    <h2>Plano Grátis</h2>
-    <p>R$0 / mês<br>Divulgação 2x no mês</p>
-    <button class="btn">Assinar</button>
+    <h3>Plano Grátis — R$0</h3>
+    <p>Divulgação 2 vezes no mês</p>
+    <button class="btn" onclick="enviarBot('Plano Grátis')">Solicitar</button>
   </div>
 
   <div class="card">
-    <h2>Plano Mini</h2>
-    <p>R$5 / mês<br>Divulgação semanal</p>
-    <button class="btn">Assinar</button>
+    <h3>Plano Mini — R$5</h3>
+    <p>4 divulgações no mês</p>
+    <button class="btn" onclick="enviarBot('Plano Mini')">Assinar</button>
   </div>
 
   <div class="card">
-    <h2>Plano Médio</h2>
-    <p>R$10 / mês<br>2x por semana</p>
-    <button class="btn">Assinar</button>
+    <h3>Plano Médio — R$10</h3>
+    <p>8 divulgações no mês</p>
+    <button class="btn" onclick="enviarBot('Plano Médio')">Assinar</button>
   </div>
 
   <div class="card">
-    <h2>Plano Master</h2>
-    <p>R$15 / mês<br>Todo dia</p>
-    <button class="btn">Assinar</button>
+    <h3>Plano Master — R$15</h3>
+    <p>Divulgação diária</p>
+    <button class="btn" onclick="enviarBot('Plano Master')">Assinar</button>
   </div>
-
-</div>
+</main>
 
 <script src="script.js"></script>
 </body>
