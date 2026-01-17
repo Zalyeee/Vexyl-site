@@ -2,31 +2,44 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Vexyl • Início</title>
+  <title>Vexyl's Place</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="particles"></canvas>
+<!-- Botão menu -->
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-<header>
-  <button class="menu-btn">≡</button>
-</header>
-
-<nav>
+<!-- Menu lateral -->
+<nav class="menu" id="menu">
   <a href="index.html">🏠 Início</a>
   <a href="assinaturas.html">💳 Assinaturas</a>
   <a href="links.html">🔗 Links</a>
-  <a href="login.html">🔐 Login</a>
 </nav>
 
-<div class="container">
-  <div class="card">
-    <h1>Olá! Seja bem-vind*</h1>
-    <p>Bem-vindo ao site do <b>Vexyl’s place</b>.</p>
-    <a class="btn" href="assinaturas.html">Ver assinaturas</a>
+<!-- Partículas -->
+<canvas id="particles"></canvas>
+
+<!-- Conteúdo -->
+<main>
+  <div class="welcome">
+    <h1>Olá! Seja bem vind* ao site do <span>Vexyl's Place</span></h1>
+    <p>
+      Aqui tem várias coisas onde você pode explorar!  
+      <br>(Deslize para baixo para saber mais)
+    </p>
   </div>
-</div>
+
+  <section class="card">
+    <h2>Sobre o site</h2>
+    <p>
+      O site do canal <strong>Vexyl's Place</strong>!  
+      Aqui temos loja, assinaturas e links (grupos, canal, Instagram e mais).  
+      Fique à vontade para explorar!
+    </p>
+  </section>
+</main>
 
 <script src="script.js"></script>
 </body>
