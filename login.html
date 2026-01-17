@@ -8,26 +8,22 @@
 </head>
 <body>
 
+<div id="particles"></div>
+
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<nav class="menu" id="menu"></nav>
 
-<nav class="menu" id="menu">
-  <a href="index.html">🏠 Início</a>
-  <a href="login.html">🔐 Login</a>
-</nav>
-
-<main>
-  <h1>Login / Cadastro</h1>
-
-  <div class="card">
-    <input id="email" type="email" placeholder="Email">
-    <input id="password" type="password" placeholder="Senha">
-    <button class="btn" onclick="login()">Entrar</button>
-    <button class="btn" onclick="register()">Criar conta</button>
-    <p id="msg"></p>
-  </div>
+<main class="card">
+  <h1>Login</h1>
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Senha">
+  <button class="btn" onclick="login()">Entrar</button>
+  <p id="msg"></p>
+  <a href="registro.html">Não tem conta? Criar agora</a>
 </main>
 
-<script type="module" src="auth.js"></script>
+<script src="particles.js"></script>
 <script src="script.js"></script>
+<script type="module" src="auth.js"></script>
 </body>
 </html>
