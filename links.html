@@ -8,32 +8,20 @@
 </head>
 <body>
 
+<div id="particles"></div>
+
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<nav class="menu" id="menu"></nav>
 
-<nav class="menu" id="menu">
-  <a href="index.html">🏠 Início</a>
-  <a href="assinaturas.html">💳 Assinaturas</a>
-  <a href="links.html">🔗 Links</a>
-</nav>
-
-<main>
+<section class="content">
   <h1>Links</h1>
+  <a class="link" href="#">Canal</a>
+  <a class="link" href="#">Grupo</a>
+  <a class="link" href="#">Instagram</a>
+</section>
 
-  <div class="card">
-    <a class="btn" href="https://wa.me/5532998258844" target="_blank">
-      🤖 Falar com o Bot
-    </a>
-  </div>
-
-  <div class="card">
-    <a class="btn" href="#" target="_blank">📢 Canal</a>
-  </div>
-
-  <div class="card">
-    <a class="btn" href="#" target="_blank">👥 Grupo</a>
-  </div>
-</main>
-
+<script src="particles.js"></script>
 <script src="script.js"></script>
+<script type="module" src="auth.js"></script>
 </body>
 </html>
