@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +5,9 @@
   font-family: Arial, sans-serif;
 }
 
-/* FUNDO */
 body {
-  background: #0b0b0b;
-  color: #fff;
-  min-height: 100vh;
+  background: #0a0a0a;
+  color: white;
 }
 
 /* PARTICLES */
@@ -25,13 +22,13 @@ body {
   position: fixed;
   top: 15px;
   left: 15px;
-  font-size: 26px;
+  z-index: 1001;
+  font-size: 24px;
   background: #111;
   color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 6px;
-  z-index: 1001;
 }
 
 .side-menu {
@@ -49,53 +46,42 @@ body {
 .side-menu a {
   display: block;
   padding: 12px;
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
-.side-menu a:hover,
-.side-menu a.active {
+.side-menu a.active,
+.side-menu a:hover {
   background: #1f1f1f;
 }
 
 /* CONTEÚDO */
 .container {
   max-width: 900px;
-  margin: 100px auto 40px;
-  padding: 0 15px;
+  margin: 100px auto;
+  padding: 15px;
 }
 
-/* CARDS */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .card {
-  background: rgba(20, 20, 20, 0.92);
+  background: rgba(25, 25, 25, 0.95);
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.6);
   text-align: center;
 }
 
-.card h2 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  opacity: 0.9;
-}
-
-/* BOTÃO */
 .card button {
   margin-top: 12px;
   padding: 10px;
   width: 100%;
-  border: none;
   border-radius: 8px;
-  background: #5c7cfa;
+  border: none;
+  background: #5865f2;
   color: white;
   font-size: 15px;
 }
