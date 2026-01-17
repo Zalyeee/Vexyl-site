@@ -3,33 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Vexyl's Place</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="particles"></div>
-
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
-<nav class="menu" id="menu"></nav>
 
-<section class="hero">
-  <h1>Olá! Seja bem vind* ao site do Vexyl's place!</h1>
-  <p>Aqui tem várias coisas onde você pode explorar!</p>
-  <span>(Deslize para baixo ↓)</span>
-</section>
+<nav id="menu" class="menu"></nav>
 
-<section class="content">
-  <h2>Sobre o site</h2>
-  <p>
-    O site do canal <b>Vexyl's place</b>!  
-    Aqui temos a loja, as assinaturas e os links (grupos, canal, Instagram e etc...).  
-    Fique à vontade para explorar o site!
-  </p>
-</section>
+<main class="hero">
+  <h1>Olá! Seja bem-vind* ao site do Vexyl's place!</h1>
+  <p>Aqui você encontra assinaturas, links e projetos do canal.</p>
 
-<script src="particles.js"></script>
+  <div class="card red">
+    <h2>Sobre o site</h2>
+    <p>
+      O site do canal <b>Vexyl's place</b>!  
+      Aqui temos a loja, assinaturas e links.  
+      Fique à vontade para explorar!
+    </p>
+  </div>
+</main>
+
 <script src="script.js"></script>
+<script type="module" src="firebase.js"></script>
 <script type="module" src="auth.js"></script>
 </body>
 </html>
