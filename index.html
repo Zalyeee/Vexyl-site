@@ -8,41 +8,28 @@
 </head>
 <body>
 
-<!-- Botão menu -->
+<div id="particles"></div>
+
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<nav class="menu" id="menu"></nav>
 
-<!-- Menu lateral -->
-<nav class="menu" id="menu">
-  <a href="index.html">🏠 Início</a>
-  <a href="assinaturas.html">💳 Assinaturas</a>
-  <a href="links.html">🔗 Links</a>
-<a href="login.html">🔐 Login</a>
-</nav>
+<section class="hero">
+  <h1>Olá! Seja bem vind* ao site do Vexyl's place!</h1>
+  <p>Aqui tem várias coisas onde você pode explorar!</p>
+  <span>(Deslize para baixo ↓)</span>
+</section>
 
-<!-- Partículas -->
-<canvas id="particles"></canvas>
+<section class="content">
+  <h2>Sobre o site</h2>
+  <p>
+    O site do canal <b>Vexyl's place</b>!  
+    Aqui temos a loja, as assinaturas e os links (grupos, canal, Instagram e etc...).  
+    Fique à vontade para explorar o site!
+  </p>
+</section>
 
-<!-- Conteúdo -->
-<main>
-  <div class="welcome">
-    <h1>Olá! Seja bem vind* ao site do <span>Vexyl's Place</span></h1>
-    <p>
-      Aqui tem várias coisas onde você pode explorar!  
-      <br>(Deslize para baixo para saber mais)
-    </p>
-  </div>
-
-  <section class="card">
-    <h2>Sobre o site</h2>
-    <p>
-      O site do canal <strong>Vexyl's Place</strong>!  
-      Aqui temos loja, assinaturas e links (grupos, canal, Instagram e mais).  
-      Fique à vontade para explorar!
-    </p>
-  </section>
-</main>
-
-<script type="module" src="auth.js"></script>
+<script src="particles.js"></script>
 <script src="script.js"></script>
+<script type="module" src="auth.js"></script>
 </body>
 </html>
