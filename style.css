@@ -85,3 +85,46 @@ body {
   color: white;
   font-size: 15px;
 }
+
+button {
+  position: relative;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* brilho suave */
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* hover */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 15px rgba(168, 85, 247, 0.35),
+    inset 0 0 10px rgba(255,255,255,0.15);
+  border-color: rgba(168, 85, 247, 0.6);
+}
+
+button:hover::before {
+  opacity: 1;
+}
