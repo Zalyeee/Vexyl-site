@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vexyl's place</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vexyl's place</title>
 
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Firebase -->
-  <script type="module" src="firebase.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- CANVAS DAS PARTÍCULAS -->
-  <canvas id="particles"></canvas>
+<!-- PARTICLES -->
+<canvas id="particles"></canvas>
 
-  <!-- MENU -->
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<!-- MENU -->
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <nav id="sideMenu">
-    <a href="index.html">Início</a>
-    <a href="assinaturas.html">Assinaturas</a>
-    <a href="links.html">Links</a>
-  </nav>
+<nav id="menu" class="side-menu">
+  <a class="active" href="index.html">🏠 Início</a>
+  <a href="assinaturas.html">💳 Assinaturas</a>
+  <a href="links.html">🔗 Links</a>
+</nav>
 
-  <!-- CONTEÚDO -->
-  <main>
-    <section class="card">
-      <h1>Olá! Seja bem-vind* ao site do Vexyl's place!</h1>
-      <p>
-        Aqui tem várias coisas onde você pode explorar!<br>
-      </p>
-    </section>
+<!-- CONTEÚDO -->
+<main class="container">
+  <div class="card">
+    <h1>Olá! Seja bem-vind*</h1>
+    <p>
+      Aqui tem várias coisas onde você pode explorar!
+      <br>(Deslize para baixo 👇)
+    </p>
+  </div>
 
-    <section class="card">
-      <h2>Sobre o site</h2>
-      <p>
-        O site do canal <b>Vexyl's place</b>!  
-        Aqui temos a loja, as assinaturas e os links
-        (grupos, canal, Instagram e etc...).  
-        Fique à vontade para explorar o site!
-      </p>
-    </section>
-  </main>
+  <div class="card">
+    <h2>Sobre o site</h2>
+    <p>
+      O site do canal <b>Vexyl's place</b>!  
+      Aqui temos assinaturas, links e novidades.
+    </p>
+  </div>
+</main>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+<script src="particles.js"></script>
 </body>
 </html>
