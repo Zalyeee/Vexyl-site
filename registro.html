@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Registro</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<main>
+<main class="container">
   <div class="card">
     <h2>Registro</h2>
-    <input type="text" id="nick" placeholder="Nome público" />
-    <input type="text" id="telefone" placeholder="Telefone" />
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Senha" />
-    <button onclick="registrar()">Criar conta</button>
+    <input id="nick" placeholder="Nome público (nick)">
+    <input id="phone" placeholder="Telefone">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Senha">
+    <button onclick="register()">Criar conta</button>
   </div>
 </main>
 
-<script type="module" src="js/main.js"></script>
+<script src="js/main.js" type="module"></script>
 </body>
 </html>
