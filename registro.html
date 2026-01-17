@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro • Vexyl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<nav class="menu" id="menu"></nav>
+
+<main class="card">
+  <h1>Criar conta</h1>
+  <input id="nome" placeholder="Nome completo">
+  <input id="telefone" placeholder="Telefone (ex: 553299...)">
+  <input id="email" type="email" placeholder="Email">
+  <input id="senha" type="password" placeholder="Senha">
+  <button class="btn" onclick="register()">Registrar</button>
+  <p id="msg"></p>
+</main>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+<script type="module" src="auth.js"></script>
+</body>
+</html>
