@@ -1,5 +1,11 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAsHXQr5k3HviBVEFPz918g_zcjUZdFpJY",
@@ -14,27 +20,43 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // MENU
-const menuBtn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-if(menuBtn) menuBtn.onclick = () => menu.classList.toggle("active");
+const menuBtn = document.getElementById("menu-btn");
+const sideMenu = document.getElementById("side-menu");
+
+if (menuBtn) {
+  menuBtn.addEventListener("click", () => {
+    sideMenu.classList.toggle("active");
+  });
+}
 
 // AUTH
-window.registrar = () => {
-  const email = email.value;
-  const password = password.value;
-  createUserWithEmailAndPassword(auth, email, password);
+window.register = () => {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => window.location.href = "index.html")
+    .catch(alert);
 };
 
 window.login = () => {
-  signInWithEmailAndPassword(auth, email.value, password.value);
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => window.location.href = "index.html")
+    .catch(alert);
 };
 
 onAuthStateChanged(auth, user => {
-  if(user){
-    document.getElementById("loginLink")?.style.display="none";
-    document.getElementById("registroLink")?.style.display="none";
-    document.getElementById("logoutBtn")?.style.display="block";
+  const loginLink = document.getElementById("loginLink");
+  const registerLink = document.getElementById("registerLink");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  if (user) {
+    if (loginLink) loginLink.style.display = "none";
+    if (registerLink) registerLink.style.display = "none";
+    if (logoutBtn) {
+      logoutBtn.style.display = "block";
+      logoutBtn.onclick = () => signOut(auth);
+    }
   }
 });
-
-document.getElementById("logoutBtn")?.addEventListener("click", ()=>signOut(auth));
