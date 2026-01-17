@@ -2,34 +2,50 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Assinaturas • Vexyl</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assinaturas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="particles"></div>
-
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
-<nav class="menu" id="menu"></nav>
+<nav id="menu" class="menu"></nav>
 
-<section class="content">
+<main class="hero">
   <h1>Assinaturas</h1>
 
-  <div class="plans">
-    <div class="plan">Grátis<br>2 divulgações/mês</div>
-    <div class="plan">Mini<br>R$5 • 4/mês</div>
-    <div class="plan">Médio<br>R$10 • 8/mês</div>
-    <div class="plan">Master<br>R$15 • Todo dia</div>
+  <div class="grid">
+    <div class="card">
+      <h2>Plano Grátis</h2>
+      <p>R$0 / mês</p>
+      <p>Divulgação 2x no mês</p>
+      <button>Assinar</button>
+    </div>
+
+    <div class="card">
+      <h2>Plano Mini</h2>
+      <p>R$5 / mês</p>
+      <p>Divulgação semanal</p>
+      <button>Assinar</button>
+    </div>
+
+    <div class="card">
+      <h2>Plano Médio</h2>
+      <p>R$10 / mês</p>
+      <p>2x por semana</p>
+      <button>Assinar</button>
+    </div>
+
+    <div class="card">
+      <h2>Plano Master</h2>
+      <p>R$15 / mês</p>
+      <p>Todo dia</p>
+      <button>Assinar</button>
+    </div>
   </div>
+</main>
 
-  <p class="warn">
-    ⚠️ Todas as assinaturas exigem login, análise e canal/grupo válido.
-  </p>
-</section>
-
-<script src="particles.js"></script>
 <script src="script.js"></script>
+<script type="module" src="firebase.js"></script>
 <script type="module" src="auth.js"></script>
 </body>
 </html>
