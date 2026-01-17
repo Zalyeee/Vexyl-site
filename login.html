@@ -2,28 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Login • Vexyl</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="particles"></div>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-<nav class="menu" id="menu"></nav>
-
-<main class="card">
+<main class="auth">
   <h1>Login</h1>
-  <input id="email" type="email" placeholder="Email">
+
+  <input id="email" placeholder="Email">
   <input id="password" type="password" placeholder="Senha">
-  <button class="btn" onclick="login()">Entrar</button>
-  <p id="msg"></p>
-  <a href="registro.html">Não tem conta? Criar agora</a>
+
+  <button onclick="login()">Entrar</button>
+  <p><a href="registro.html">Criar conta</a></p>
 </main>
 
-<script src="particles.js"></script>
-<script src="script.js"></script>
+<script type="module" src="firebase.js"></script>
 <script type="module" src="auth.js"></script>
 </body>
 </html>
