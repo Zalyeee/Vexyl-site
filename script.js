@@ -1,49 +1,78 @@
-// MENU
+// ==========================
+// ☰ MENU LATERAL
+// ==========================
 function toggleMenu() {
-  const menu = document.getElementById("sideMenu");
-  menu.style.left = menu.style.left === "0px" ? "-220px" : "0px";
+  const menu = document.getElementById("menu")
+
+  if (!menu) return
+
+  if (menu.classList.contains("open")) {
+    menu.classList.remove("open")
+  } else {
+    menu.classList.add("open")
+  }
 }
 
-// PARTÍCULAS
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
+// Fecha o menu ao clicar fora
+document.addEventListener("click", (e) => {
+  const menu = document.getElementById("menu")
+  const button = document.getElementById("menu-btn")
 
-let particles = [];
+  if (!menu || !button) return
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.remove("open")
+  }
+})
+
+// ==========================
+// 📜 SCROLL SUAVE
+// ==========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault()
+
+    const target = document.querySelector(this.getAttribute("href"))
+    if (!target) return
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+
+    // Fecha menu no mobile
+    const menu = document.getElementById("menu")
+    if (menu) menu.classList.remove("open")
+  })
+})
+
+// ==========================
+// 💬 ASSINATURAS (WHATSAPP)
+// ==========================
+function assinar(plano) {
+  const numero = "5532998258844"
+
+  const mensagem = encodeURIComponent(
+    `Olá! Quero assinar o plano ${plano}.\n\n` +
+    `Meu canal/grupo é:\n` +
+    `Link:\n`
+  )
+
+  const url = `https://wa.me/${numero}?text=${mensagem}`
+  window.open(url, "_blank")
 }
-window.addEventListener("resize", resize);
-resize();
 
-for (let i = 0; i < 120; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.4,
-    dy: (Math.random() - 0.5) * 0.4
-  });
-}
+// ==========================
+// ✨ PEQUENA ANIMAÇÃO AO SCROLL
+// ==========================
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show")
+    }
+  })
+})
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  particles.forEach(p => {
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "white";
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
-}
-
-animate();
+document.querySelectorAll(".card").forEach(card => {
+  observer.observe(card)
+})
