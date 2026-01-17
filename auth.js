@@ -6,8 +6,12 @@ import {
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
-/* 🔥 SUA CONFIG DO FIREBASE */
 const firebaseConfig = {
   apiKey: "AIzaSyAsHXQr5k3HviBVEFPz918g_zcjUZdFpJY",
   authDomain: "cemiteryal-site.firebaseapp.com",
@@ -19,36 +23,67 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 /* LOGIN */
 window.login = async () => {
   const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const senha = document.getElementById("password").value;
 
   try {
-    await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, senha);
     location.href = "assinaturas.html";
-  } catch (err) {
-    document.getElementById("msg").innerText = err.message;
+  } catch (e) {
+    document.getElementById("msg").innerText = e.message;
   }
 };
 
-/* CADASTRO */
+/* REGISTRO */
 window.register = async () => {
+  const nome = document.getElementById("nome").value;
+  const telefone = document.getElementById("telefone").value;
   const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const senha = document.getElementById("senha").value;
 
   try {
-    await createUserWithEmailAndPassword(auth, email, password);
+    const cred = await createUserWithEmailAndPassword(auth, email, senha);
+
+    await setDoc(doc(db, "users", cred.user.uid), {
+      nome,
+      telefone,
+      email,
+      criadoEm: new Date()
+    });
+
     location.href = "assinaturas.html";
-  } catch (err) {
-    document.getElementById("msg").innerText = err.message;
+  } catch (e) {
+    document.getElementById("msg").innerText = e.message;
   }
 };
 
-/* PROTEÇÃO DE PÁGINA */
+/* LOGOUT */
+window.logout = async () => {
+  await signOut(auth);
+  location.href = "index.html";
+};
+
+/* MENU DINÂMICO */
 onAuthStateChanged(auth, user => {
-  if (location.pathname.includes("assinaturas") && !user) {
-    location.href = "login.html";
+  const menu = document.getElementById("menu");
+  if (!menu) return;
+
+  if (user) {
+    menu.innerHTML = `
+      <a href="index.html">🏠 Início</a>
+      <a href="assinaturas.html">💳 Assinaturas</a>
+      <a href="links.html">🔗 Links</a>
+      <a href="#" onclick="logout()">🚪 Logout</a>
+    `;
+  } else {
+    menu.innerHTML = `
+      <a href="index.html">🏠 Início</a>
+      <a href="login.html">🔐 Login</a>
+      <a href="registro.html">📝 Registro</a>
+    `;
   }
 });
