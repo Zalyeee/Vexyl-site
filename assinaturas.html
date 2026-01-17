@@ -1,38 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Assinaturas</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="menuBtn" class="menu-btn">☰</div>
-<nav id="menu"></nav>
+<button id="menu-btn" class="menu-btn">☰</button>
 
-<main>
-  <div class="card red">
-    <h2>Plano Grátis</h2>
-    <p>2 divulgações por mês</p>
-  </div>
+<nav id="side-menu" class="side-menu">
+  <a href="index.html">Início</a>
+  <a href="assinaturas.html">Assinaturas</a>
+</nav>
 
+<main class="container">
   <div class="card">
-    <h2>Plano Mini - R$5</h2>
-    <p>4 divulgações no mês</p>
-  </div>
-
-  <div class="card red">
-    <h2>Plano Médio - R$10</h2>
-    <p>8 divulgações no mês</p>
-  </div>
-
-  <div class="card">
-    <h2>Plano Master - R$15</h2>
-    <p>Divulgação diária</p>
+    <h2>Planos</h2>
+    <ul>
+      <li>Grátis — 2 divulgações/mês</li>
+      <li>Mini — R$5 (4/mês)</li>
+      <li>Médio — R$10 (8/mês)</li>
+      <li>Master — R$15 (diário)</li>
+    </ul>
   </div>
 </main>
 
-<script type="module" src="js/main.js"></script>
+<script src="js/main.js" type="module"></script>
 </body>
 </html>
