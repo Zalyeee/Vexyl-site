@@ -3,23 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Vexyl's Place</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <canvas id="particles"></canvas>
 
-<header class="topbar">
-  <button id="menu-btn">☰</button>
-  <span class="logo">Vexyl</span>
-</header>
+<button id="menu-btn">☰</button>
 
-<nav id="menu" class="menu">
+<nav id="side-menu">
   <a href="index.html">Início</a>
-  <a href="login.html" id="loginBtn">Login</a>
-  <a href="registro.html" id="registerBtn">Registro</a>
-  <a href="#" id="logoutBtn" onclick="logout()">Logout</a>
+  <a href="assinaturas.html">Assinaturas</a>
+  <a href="login.html">Login</a>
+  <a href="registro.html">Registro</a>
 </nav>
 
 <main>
@@ -28,17 +24,12 @@
     <p>Aqui você encontra assinaturas, links e projetos do canal.</p>
   </div>
 
-  <div class="card red">
+  <div class="card">
     <h2>Sobre o site</h2>
-    <p>
-      O site do canal <b>Vexyl's place</b>!  
-      Aqui temos loja, assinaturas e links.  
-      Fique à vontade para explorar!
-    </p>
+    <p>O site do canal Vexyl's place!</p>
   </div>
 </main>
 
-<script src="particles.js"></script>
-<script type="module" src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
