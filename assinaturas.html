@@ -1,96 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Assinaturas — Vexyl's place</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assinaturas</title>
 
-  <!-- CSS PRINCIPAL -->
-  <link rel="stylesheet" href="./style.css">
-
-  <!-- ÍCONES -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- PARTICLES -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- FUNDO -->
 <canvas id="particles"></canvas>
 
-<!-- MENU -->
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-<nav class="side-menu" id="menu">
+<nav id="menu" class="side-menu">
   <a href="index.html">🏠 Início</a>
-  <a href="assinaturas.html" class="active">💳 Assinaturas</a>
+  <a class="active" href="assinaturas.html">💳 Assinaturas</a>
   <a href="links.html">🔗 Links</a>
 </nav>
 
-<!-- CONTEÚDO -->
-<main class="container">
+<main class="container cards">
 
-  <h1>Planos de Assinatura</h1>
+  <div class="card">
+    <h2>Plano Grátis</h2>
+    <p>R$0 / mês</p>
+    <p>Divulgação 2x no mês</p>
+    <button onclick="assinar('Grátis')">Assinar</button>
+  </div>
 
-  <div class="cards">
+  <div class="card">
+    <h2>Plano Mini</h2>
+    <p>R$5 / mês</p>
+    <p>Divulgação semanal</p>
+    <button onclick="assinar('Mini')">Assinar</button>
+  </div>
 
-    <div class="card">
-      <h2>Plano Grátis</h2>
-      <p>R$0 / mês</p>
-      <p>Divulgação 2x no mês</p>
-      <button onclick="assinar('Grátis')">Assinar</button>
-    </div>
+  <div class="card">
+    <h2>Plano Médio</h2>
+    <p>R$10 / mês</p>
+    <p>2x por semana</p>
+    <button onclick="assinar('Médio')">Assinar</button>
+  </div>
 
-    <div class="card">
-      <h2>Plano Mini</h2>
-      <p>R$5 / mês</p>
-      <p>Divulgação semanal</p>
-      <button onclick="assinar('Mini')">Assinar</button>
-    </div>
-
-    <div class="card">
-      <h2>Plano Médio</h2>
-      <p>R$10 / mês</p>
-      <p>2x por semana</p>
-      <button onclick="assinar('Médio')">Assinar</button>
-    </div>
-
-    <div class="card">
-      <h2>Plano Master</h2>
-      <p>R$15 / mês</p>
-      <p>Todo dia</p>
-      <button onclick="assinar('Master')">Assinar</button>
-    </div>
-
+  <div class="card">
+    <h2>Plano Master</h2>
+    <p>R$15 / mês</p>
+    <p>Todo dia</p>
+    <button onclick="assinar('Master')">Assinar</button>
   </div>
 
 </main>
 
-<!-- JS PRINCIPAL -->
-<script src="./script.js"></script>
-
-<!-- PARTICLES INIT -->
-<script>
-tsParticles.load("particles", {
-  particles: {
-    number: { value: 60 },
-    color: { value: "#ffffff" },
-    opacity: { value: 0.5 },
-    size: { value: 2 },
-    move: { enable: true, speed: 0.6 }
-  }
-})
-</script>
-
-<script>
-function assinar(plano) {
-  const numero = "5532998258844"
-  const msg = `Olá! Quero fazer a assinatura ${plano}.`
-  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`)
-}
-</script>
-
+<script src="script.js"></script>
+<script src="particles.js"></script>
 </body>
 </html>
