@@ -9,43 +9,7 @@ body {
   color: white;
 }
 
-.menu-btn {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1001;
-  background: red;
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  font-size: 22px;
-  border-radius: 12px;
-}
-
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100vh;
-  background: #0b0b0b;
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  transition: left 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 0 30px rgba(255,0,0,0.4);
-}
-
-.side-menu.active {
-  left: 0;
-}
-
-.side-menu a {
-  color: white;
-  text-decoration: none;
-  margin: 12px 0;
-  font-size: 18px;
+ rgba(255,0,0,0.4);
 }
 
 .container {
