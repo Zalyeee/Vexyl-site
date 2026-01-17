@@ -8,43 +8,28 @@
 </head>
 <body>
 
+<div id="particles"></div>
+
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<nav class="menu" id="menu"></nav>
 
-<nav class="menu" id="menu">
-  <a href="index.html">🏠 Início</a>
-  <a href="assinaturas.html">💳 Assinaturas</a>
-  <a href="links.html">🔗 Links</a>
-<a href="login.html">🔐 Login</a>
-</nav>
-
-<main>
+<section class="content">
   <h1>Assinaturas</h1>
 
-  <div class="card">
-    <h3>Plano Grátis — R$0</h3>
-    <p>Divulgação 2 vezes no mês</p>
-    <button class="btn" onclick="enviarBot('Plano Grátis')">Solicitar</button>
+  <div class="plans">
+    <div class="plan">Grátis<br>2 divulgações/mês</div>
+    <div class="plan">Mini<br>R$5 • 4/mês</div>
+    <div class="plan">Médio<br>R$10 • 8/mês</div>
+    <div class="plan">Master<br>R$15 • Todo dia</div>
   </div>
 
-  <div class="card">
-    <h3>Plano Mini — R$5</h3>
-    <p>4 divulgações no mês</p>
-    <button class="btn" onclick="enviarBot('Plano Mini')">Assinar</button>
-  </div>
+  <p class="warn">
+    ⚠️ Todas as assinaturas exigem login, análise e canal/grupo válido.
+  </p>
+</section>
 
-  <div class="card">
-    <h3>Plano Médio — R$10</h3>
-    <p>8 divulgações no mês</p>
-    <button class="btn" onclick="enviarBot('Plano Médio')">Assinar</button>
-  </div>
-
-  <div class="card">
-    <h3>Plano Master — R$15</h3>
-    <p>Divulgação diária</p>
-    <button class="btn" onclick="enviarBot('Plano Master')">Assinar</button>
-  </div>
-</main>
-
+<script src="particles.js"></script>
 <script src="script.js"></script>
+<script type="module" src="auth.js"></script>
 </body>
 </html>
