@@ -1,35 +1,48 @@
-// MENU
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
-
-if (menuBtn) {
-  menuBtn.onclick = () => nav.classList.toggle("open");
+// Menu
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
 }
 
-// PARTÍCULAS
+// WhatsApp bot
+function enviarBot(plano) {
+  const numero = "5532998258844";
+  const texto = encodeURIComponent(
+    `Olá! Quero saber mais sobre o ${plano}.`
+  );
+  window.open(`https://wa.me/${numero}?text=${texto}`, "_blank");
+}
+
+// Partículas simples
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
+let w, h;
+let particles = [];
 
 function resize() {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
 }
+window.addEventListener("resize", resize);
 resize();
-addEventListener("resize", resize);
 
-const particles = Array.from({ length: 120 }, () => ({
-  x: Math.random() * canvas.width,
-  y: Math.random() * canvas.height,
-  r: Math.random() * 2 + 0.5,
-  v: Math.random() * 0.5 + 0.2
-}));
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 2 + 1,
+    dx: Math.random() - 0.5,
+    dy: Math.random() - 0.5
+  });
+}
 
 function draw() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle = "white";
+  ctx.clearRect(0,0,w,h);
+  ctx.fillStyle = "rgba(255,255,255,0.7)";
   particles.forEach(p => {
-    p.y += p.v;
-    if (p.y > canvas.height) p.y = 0;
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > w) p.dx *= -1;
+    if (p.y < 0 || p.y > h) p.dy *= -1;
     ctx.beginPath();
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
     ctx.fill();
