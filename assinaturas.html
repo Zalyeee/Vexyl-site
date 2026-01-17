@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Assinaturas</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-<nav id="menu" class="menu"></nav>
+<div id="menuBtn" class="menu-btn">☰</div>
+<nav id="menu"></nav>
 
-<main class="hero">
-  <h1>Assinaturas</h1>
+<main>
+  <div class="card red">
+    <h2>Plano Grátis</h2>
+    <p>2 divulgações por mês</p>
+  </div>
 
-  <div class="grid">
-    <div class="card">
-      <h2>Plano Grátis</h2>
-      <p>R$0 / mês</p>
-      <p>Divulgação 2x no mês</p>
-      <button>Assinar</button>
-    </div>
+  <div class="card">
+    <h2>Plano Mini - R$5</h2>
+    <p>4 divulgações no mês</p>
+  </div>
 
-    <div class="card">
-      <h2>Plano Mini</h2>
-      <p>R$5 / mês</p>
-      <p>Divulgação semanal</p>
-      <button>Assinar</button>
-    </div>
+  <div class="card red">
+    <h2>Plano Médio - R$10</h2>
+    <p>8 divulgações no mês</p>
+  </div>
 
-    <div class="card">
-      <h2>Plano Médio</h2>
-      <p>R$10 / mês</p>
-      <p>2x por semana</p>
-      <button>Assinar</button>
-    </div>
-
-    <div class="card">
-      <h2>Plano Master</h2>
-      <p>R$15 / mês</p>
-      <p>Todo dia</p>
-      <button>Assinar</button>
-    </div>
+  <div class="card">
+    <h2>Plano Master - R$15</h2>
+    <p>Divulgação diária</p>
   </div>
 </main>
 
-<script src="script.js"></script>
-<script type="module" src="firebase.js"></script>
-<script type="module" src="auth.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
