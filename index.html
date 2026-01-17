@@ -3,30 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Vexyl's Place</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<div id="particles-js"></div>
 
-<nav id="menu" class="menu"></nav>
+<header>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <h1>Vexyl</h1>
+</header>
 
-<main class="hero">
-  <h1>Olá! Seja bem-vind* ao site do Vexyl's place!</h1>
-  <p>Aqui você encontra assinaturas, links e projetos do canal.</p>
+<nav id="menu">
+  <a href="index.html">Início</a>
+  <a href="login.html" id="loginBtn">Login</a>
+  <a href="registro.html" id="registerBtn">Registro</a>
+  <a href="#" id="logoutBtn" onclick="logout()">Logout</a>
+</nav>
+
+<main>
+  <div class="card">
+    <h2>Olá! Seja bem-vind*</h2>
+    <p>Aqui você encontra assinaturas, links e projetos do canal.</p>
+  </div>
 
   <div class="card red">
-    <h2>Sobre o site</h2>
-    <p>
-      O site do canal <b>Vexyl's place</b>!  
-      Aqui temos a loja, assinaturas e links.  
-      Fique à vontade para explorar!
-    </p>
+    <h3>Sobre o site</h3>
+    <p>O site do canal <b>Vexyl's place</b>. Fique à vontade para explorar!</p>
   </div>
 </main>
 
-<script src="script.js"></script>
-<script type="module" src="firebase.js"></script>
-<script type="module" src="auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="particles.js"></script>
+<script type="module" src="main.js"></script>
+
 </body>
 </html>
