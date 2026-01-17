@@ -8,14 +8,14 @@
 </head>
 <body>
 
-<div id="particles-js"></div>
+<canvas id="particles"></canvas>
 
-<header>
+<header class="topbar">
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <h1>Vexyl</h1>
+  <span class="logo">Vexyl</span>
 </header>
 
-<nav id="menu">
+<nav id="menu" class="menu">
   <a href="index.html">Início</a>
   <a href="login.html" id="loginBtn">Login</a>
   <a href="registro.html" id="registerBtn">Registro</a>
@@ -24,19 +24,21 @@
 
 <main>
   <div class="card">
-    <h2>Olá! Seja bem-vind*</h2>
+    <h1>Olá! Seja bem-vind*</h1>
     <p>Aqui você encontra assinaturas, links e projetos do canal.</p>
   </div>
 
   <div class="card red">
-    <h3>Sobre o site</h3>
-    <p>O site do canal <b>Vexyl's place</b>. Fique à vontade para explorar!</p>
+    <h2>Sobre o site</h2>
+    <p>
+      O site do canal <b>Vexyl's place</b>!  
+      Aqui temos loja, assinaturas e links.  
+      Fique à vontade para explorar!
+    </p>
   </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="particles.js"></script>
 <script type="module" src="main.js"></script>
-
 </body>
 </html>
