@@ -4,119 +4,10 @@
   <meta charset="UTF-8">
   <title>Vexyl • Início</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0f;
-      color: white;
-      overflow-x: hidden;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px;
-      background: rgba(0,0,0,.6);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 500;
-    }
-
-    #menu-btn {
-      font-size: 24px;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: -220px;
-      width: 220px;
-      height: 100%;
-      background: #0f0f14;
-      padding: 20px;
-      transition: left .3s ease;
-      z-index: 1000;
-    }
-
-    nav.open {
-      left: 0;
-    }
-
-    nav a {
-      display: block;
-      margin-bottom: 15px;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    nav a:hover {
-      color: #a855f7;
-    }
-
-    main {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .intro {
-      max-width: 700px;
-      margin: auto;
-      font-size: 16px;
-      opacity: .85;
-    }
-
-    .hint {
-      margin-top: 40px;
-      font-size: 14px;
-      opacity: .7;
-    }
-
-    .sections {
-      margin-top: 80px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,.06);
-      border-radius: 16px;
-      padding: 25px;
-      backdrop-filter: blur(8px);
-      transition: transform .3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #a855f7;
-    }
-  </style>
 </head>
-
 <body>
 
-<!-- MENU LATERAL -->
 <nav id="menu">
   <a href="index.html">Início</a>
   <a href="assinaturas.html">Assinaturas</a>
@@ -130,37 +21,17 @@
 
 <main>
   <h1>Olá! Seja bem vind* ao site do Vexyl's place!</h1>
-
-  <p class="intro">
-    Aqui tem várias coisas onde você pode explorar!  
-    O site do canal <strong>Vexyl's place</strong> reúne loja, assinaturas e links
-    como grupos, canal e redes sociais.
+  <p>
+    Aqui você encontra assinaturas, links e projetos do canal.
+    Explore o menu ☰ para acessar tudo.
   </p>
 
-  <p class="hint">
-    (Deslize para baixo para saber mais 👇)
-  </p>
-
-  <section class="sections">
-    <div class="card">
-      <h3>📦 Assinaturas</h3>
-      <p>Divulgue seu canal ou grupo com planos acessíveis.</p>
-    </div>
-
-    <div class="card">
-      <h3>🔗 Links</h3>
-      <p>Acesse o canal, grupos e outras redes.</p>
-    </div>
-
-    <div class="card">
-      <h3>🗞 Conteúdos</h3>
-      <p>Histórias, fofocas ou projetos futuros do site.</p>
-    </div>
-  </section>
+  <div class="card">
+    <h3>🗞 Conteúdos</h3>
+    <p>Histórias, ideias e projetos futuros.</p>
+  </div>
 </main>
 
-<!-- SCRIPT -->
 <script src="script.js"></script>
-
 </body>
 </html>
