@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +6,17 @@
   font-family: Arial, sans-serif;
 }
 
+/* FUNDO */
 body {
-  background: black;
-  color: white;
-  overflow-x: hidden;
+  background: #0b0b0b;
+  color: #fff;
+  min-height: 100vh;
 }
 
-/* CANVAS */
+/* PARTICLES */
 #particles {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -1;
 }
 
@@ -27,41 +26,76 @@ body {
   top: 15px;
   left: 15px;
   font-size: 26px;
-  cursor: pointer;
-  z-index: 10;
+  background: #111;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 1001;
 }
 
-#sideMenu {
+.side-menu {
   position: fixed;
-  left: -220px;
   top: 0;
+  left: -220px;
   width: 200px;
   height: 100%;
   background: #111;
-  padding: 20px;
+  padding-top: 60px;
   transition: 0.3s;
-  z-index: 9;
+  z-index: 1000;
 }
 
-#sideMenu a {
+.side-menu a {
   display: block;
-  color: white;
+  padding: 12px;
+  color: #fff;
   text-decoration: none;
-  margin: 15px 0;
+}
+
+.side-menu a:hover,
+.side-menu a.active {
+  background: #1f1f1f;
 }
 
 /* CONTEÚDO */
-main {
-  padding: 80px 20px;
+.container {
+  max-width: 900px;
+  margin: 100px auto 40px;
+  padding: 0 15px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  background: rgba(255,255,255,0.06);
+  background: rgba(20, 20, 20, 0.92);
+  border-radius: 14px;
   padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+  text-align: center;
 }
 
-html, body {
-  background: #000 !important;
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  opacity: 0.9;
+}
+
+/* BOTÃO */
+.card button {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #5c7cfa;
+  color: white;
+  font-size: 15px;
 }
