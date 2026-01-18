@@ -3,29 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>Assinaturas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<div id="particles-js"></div>
 
 <button id="menu-btn" class="menu-btn">☰</button>
 
 <nav id="side-menu" class="side-menu">
   <a href="index.html">Início</a>
   <a href="assinaturas.html">Assinaturas</a>
+  <a href="configuracao.html">Configurações</a>
 </nav>
 
 <main class="container">
+  <div class="card red">
+    <h1>Planos de Assinatura</h1>
+  </div>
+
   <div class="card">
-    <h2>Planos</h2>
-    <ul>
-      <li>Grátis — 2 divulgações/mês</li>
-      <li>Mini — R$5 (4/mês)</li>
-      <li>Médio — R$10 (8/mês)</li>
-      <li>Master — R$15 (diário)</li>
-    </ul>
+    <h3>Plano Grátis — R$0</h3>
+    <p>Divulgação 2x no mês</p>
+    <button class="btn">Quero esse</button>
+  </div>
+
+  <div class="card">
+    <h3>Plano Mini — R$5</h3>
+    <p>4 divulgações no mês</p>
+    <button class="btn">Quero esse</button>
+  </div>
+
+  <div class="card">
+    <h3>Plano Médio — R$10</h3>
+    <p>8 divulgações no mês</p>
+    <button class="btn">Quero esse</button>
+  </div>
+
+  <div class="card">
+    <h3>Plano Master — R$15</h3>
+    <p>Divulgação diária</p>
+    <button class="btn">Quero esse</button>
   </div>
 </main>
 
-<script src="js/main.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
