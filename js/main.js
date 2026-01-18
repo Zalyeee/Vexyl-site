@@ -1,27 +1,15 @@
-// ===== MENU LATERAL =====
-const menuBtn = document.getElementById("menu-btn");
-const sideMenu = document.getElementById("side-menu");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const sideMenu = document.getElementById("sideMenu");
+  const overlay = document.getElementById("overlay");
 
-menuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  sideMenu.classList.toggle("active");
-});
+  menuBtn.onclick = () => {
+    sideMenu.classList.add("active");
+    overlay.classList.add("active");
+  };
 
-// Fecha o menu ao clicar fora
-document.addEventListener("click", (e) => {
-  if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+  overlay.onclick = () => {
     sideMenu.classList.remove("active");
-  }
-});
-
-// ===== PARTÍCULAS =====
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 70 },
-    color: { value: "#ff0000" },
-    shape: { type: "circle" },
-    opacity: { value: 0.6 },
-    size: { value: 3 },
-    move: { speed: 2 }
-  }
+    overlay.classList.remove("active");
+  };
 });
