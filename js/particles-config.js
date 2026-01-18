@@ -1,46 +1,36 @@
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 70,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    },
-    color: {
-      value: "#ff2b2b"
-    },
-    shape: {
-      type: "circle"
-    },
-    opacity: {
-      value: 0.5,
-      random: true
-    },
-    size: {
-      value: 3,
-      random: true
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#ff2b2b",
-      opacity: 0.4,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 2
-    }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse"
-      }
-    }
-  },
-  retina_detect: true
-});
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+window.onresize = resize;
+
+const particles = Array.from({ length: 80 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  r: Math.random() * 1.5 + .5,
+  vx: (Math.random() - .5) * .3,
+  vy: (Math.random() - .5) * .3
+}));
+
+function loop() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = "white";
+
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(loop);
+}
+loop();
