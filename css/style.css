@@ -14,12 +14,13 @@ body {
   position: fixed;
   top: 15px;
   left: 15px;
+  width: 48px;
+  height: 48px;
   background: #111;
-  color: #fff;
-  border: 1px solid #ff0000;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-size: 20px;
+  color: white;
+  border: 1px solid red;
+  border-radius: 12px;
+  font-size: 22px;
   z-index: 1001;
 }
 
@@ -30,10 +31,9 @@ body {
   width: 240px;
   height: 100%;
   background: #050505;
-  padding: 60px 20px;
+  padding: 70px 20px;
   transition: 0.3s;
   z-index: 1000;
-  box-shadow: 0 0 20px rgba(255,0,0,0.4);
 }
 
 .side-menu a {
@@ -50,6 +50,8 @@ body {
 
 /* ===== CONTEÚDO ===== */
 .container {
+  position: relative;
+  z-index: 2;
   padding: 100px 20px 40px;
 }
 
