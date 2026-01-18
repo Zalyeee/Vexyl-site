@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Assinaturas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Assinaturas</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="particles-js"></div>
+<button id="menu-btn">☰</button>
 
-<button id="menu-btn" class="menu-btn">☰</button>
-
-<nav id="side-menu" class="side-menu">
+<nav id="side-menu">
   <a href="index.html">Início</a>
   <a href="assinaturas.html">Assinaturas</a>
+  <a href="historias.html">Histórias</a>
+  <a href="links.html">Links</a>
   <a href="configuracao.html">Configurações</a>
 </nav>
 
 <main class="container">
-  <div class="card red">
-    <h1>Planos de Assinatura</h1>
-  </div>
+<h1>Assinaturas</h1>
 
-  <div class="card">
-    <h3>Plano Grátis — R$0</h3>
-    <p>Divulgação 2x no mês</p>
-    <button class="btn">Quero esse</button>
-  </div>
+<div class="card red">
+<h2>Plano Grátis</h2>
+<p>2 divulgações por mês</p>
+<button onclick="assinar('Grátis')">Assinar</button>
+</div>
 
-  <div class="card">
-    <h3>Plano Mini — R$5</h3>
-    <p>4 divulgações no mês</p>
-    <button class="btn">Quero esse</button>
-  </div>
+<div class="card red">
+<h2>Plano Mini</h2>
+<p>R$5 — 4x por mês</p>
+<button onclick="assinar('Mini')">Assinar</button>
+</div>
 
-  <div class="card">
-    <h3>Plano Médio — R$10</h3>
-    <p>8 divulgações no mês</p>
-    <button class="btn">Quero esse</button>
-  </div>
+<div class="card red">
+<h2>Plano Médio</h2>
+<p>R$10 — 8x por mês</p>
+<button onclick="assinar('Médio')">Assinar</button>
+</div>
 
-  <div class="card">
-    <h3>Plano Master — R$15</h3>
-    <p>Divulgação diária</p>
-    <button class="btn">Quero esse</button>
-  </div>
+<div class="card red">
+<h2>Plano Master</h2>
+<p>R$15 — Diário</p>
+<button onclick="assinar('Master')">Assinar</button>
+</div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="js/main.js"></script>
+<script>
+function assinar(plano){
+  window.open(
+    `https://wa.me/5532998258844?text=Olá! Quero o *Plano ${plano}* do Vexyl`,
+    "_blank"
+  )
+}
+</script>
 
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/guard.js"></script>
 </body>
 </html>
