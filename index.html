@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Vexyl's Place</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <button id="menu-btn" class="menu-btn">☰</button>
-  <span class="logo">Vexyl</span>
-</header>
+<button id="menu-btn" class="menu-btn">☰</button>
 
 <nav id="side-menu" class="side-menu">
   <a href="index.html">Início</a>
   <a href="assinaturas.html">Assinaturas</a>
-  <a href="login.html">Login</a>
-  <a href="registro.html">Registro</a>
-<a href="senha.html">Configurações</a>
+  <a href="login.html" id="loginLink">Login</a>
+  <a href="registro.html" id="registerLink">Registro</a>
+  <a href="configuracao.html" id="configLink" style="display:none;">Configurações</a>
+  <a href="#" id="logoutBtn" style="display:none;">Logout</a>
 </nav>
 
 <main class="container">
-  <div class="card">
-    <h1>Olá! Seja bem-vind*</h1>
-    <p>Aqui você encontra assinaturas, links e projetos do canal.</p>
+  <div class="card red">
+    <h1>Olá! Seja bem-vind* ao site do Vexyl's Place!</h1>
+    <p>
+      Aqui tem várias coisas onde você pode explorar!  
+      <br><br>
+      <b>Deslize para baixo para saber mais ↓</b>
+    </p>
   </div>
 
-  <div class="card red">
+  <div class="card">
     <h2>Sobre o site</h2>
-    <p>O site do canal Vexyl's place! Fique à vontade para explorar.</p>
+    <p>
+      O site do canal <b>Vexyl's Place</b>!  
+      Aqui temos a loja, as assinaturas e os links  
+      (grupos, canal, Instagram e muito mais).  
+      Fique à vontade para explorar!
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Links</h2>
+    <a class="link" href="https://wa.me/5532998258844?text=Oioi%20Bot!%20Queria%20tirar%20uma%20dúvida%20sobre%20o%20canal!">
+      Falar com o bot
+    </a>
   </div>
 </main>
 
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
