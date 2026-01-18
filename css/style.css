@@ -1,108 +1,72 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  background: black;
-  color: white;
-}
-
-/* TOPO */
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: #b00000;
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  z-index: 1000;
+  background: #0b0b0b;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 .menu-btn {
-  background: transparent;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  background: none;
+  color: #ff2b2b;
   border: none;
-  color: white;
-  font-size: 26px;
   cursor: pointer;
+  z-index: 1001;
 }
 
-.logo {
-  margin-left: 12px;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-}
-
-/* MENU LATERAL */
 .side-menu {
   position: fixed;
   top: 0;
   left: -260px;
-  width: 240px;
-  height: 100vh;
-  background: #111;
-  padding-top: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: left 0.3s ease;
-  z-index: 999;
+  width: 250px;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 1000;
 }
 
 .side-menu a {
+  display: block;
   color: white;
   text-decoration: none;
-  padding: 12px 20px;
-  font-size: 18px;
+  margin: 15px 0;
 }
 
-.side-menu a:hover {
-  background: #b00000;
-}
-
-/* MENU ABERTO */
-.side-menu.active {
+.side-menu.open {
   left: 0;
 }
 
-/* CONTEÚDO NÃO FICAR ATRÁS DO TOPO */
-main {
-  padding-top: 80px;
-}
-
- rgba(255,0,0,0.4);
-}
-
 .container {
-  padding: 90px 20px;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .card {
-  background: #111;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
   padding: 20px;
-  border-radius: 20px;
   margin-bottom: 20px;
 }
 
 .card.red {
-  box-shadow: 0 0 20px rgba(255,0,0,0.4);
+  border-left: 5px solid #ff2b2b;
 }
 
-input, button {
-  width: 100%;
+.link {
+  display: inline-block;
   margin-top: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-}
-
-button {
-  background: red;
-  color: white;
-  font-size: 16px;
+  color: #ff2b2b;
+  text-decoration: none;
 }
