@@ -1,62 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Vexyl's Place</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Vexyl's Place</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- Partículas -->
-<div id="particles-js"></div>
+<canvas id="particles"></canvas>
 
-<!-- Botão menu -->
-<button id="menu-btn" class="menu-btn">☰</button>
+<button id="menuBtn" class="menu-btn">☰</button>
+<div id="overlay"></div>
 
-<!-- Menu lateral -->
-<nav id="side-menu" class="side-menu">
+<nav id="sideMenu" class="side-menu">
   <a href="index.html">Início</a>
   <a href="assinaturas.html">Assinaturas</a>
-  <a href="configuracao.html">Configurações</a>
+  <a href="configuração.html">Configurações</a>
 </nav>
 
-<!-- Conteúdo -->
 <main class="container">
   <div class="card red">
-    <h1>Olá! Seja bem-vind* ao site do Vexyl's Place!</h1>
-    <p>Aqui tem várias coisas onde você pode explorar.<br>
-    <b>Deslize pra baixo para saber mais.</b></p>
+    <h1>Olá! Seja bem-vind* ao Vexyl’s Place</h1>
+    <p>Explore histórias, assinaturas e projetos.</p>
   </div>
 
   <div class="card">
-    <h2>Sobre o site</h2>
-    <p>
-      O site do canal <b>Vexyl's Place</b>!  
-      Aqui temos a loja, assinaturas e links.
-      Fique à vontade para explorar!
-    </p>
+    <p>Deslize para descobrir mais.</p>
   </div>
 </main>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 80 },
-    color: { value: "#ffffff" },
-    size: { value: 2 },
-    move: { speed: 1 },
-    line_linked: {
-      enable: true,
-      color: "#ffffff",
-      opacity: 0.2
-    }
-  }
-});
-</script>
+<script src="js/particles.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>
