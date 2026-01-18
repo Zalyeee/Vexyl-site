@@ -1,8 +1,25 @@
-<input id="nick" placeholder="Nome público">
-<input id="realname" placeholder="Nome real">
-<input id="phone" placeholder="Telefone">
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Senha">
-<button onclick="register()">Criar conta</button>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="container">
+  <div class="card">
+    <h2>Criar conta</h2>
+
+    <input id="nickInput" placeholder="Nome público">
+    <input id="telefoneInput" placeholder="Telefone">
+    <input id="emailInput" placeholder="Email">
+    <input id="passwordInput" type="password" placeholder="Senha">
+
+    <button onclick="register()">Registrar</button>
+  </div>
+</main>
 
 <script type="module" src="js/auth.js"></script>
+</body>
+</html>
