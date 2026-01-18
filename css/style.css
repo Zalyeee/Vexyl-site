@@ -1,96 +1,143 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
+/* ===== BODY ===== */
 body {
-  background: black;
-  color: white;
+  background: #0d0d0d;
+  color: #ffffff;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Partículas */
+/* ===== PARTÍCULAS ===== */
 #particles-js {
   position: fixed;
   inset: 0;
-  z-index: -10;
+  z-index: -1;
 }
 
-/* Menu */
-.menu-btn {
+/* ===== MENU BUTTON ===== */
+#menu-btn {
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 1001;
-  background: transparent;
-  color: red;
-  font-size: 30px;
+  background: #ffffff;
+  color: #000000;
   border: none;
+  padding: 10px 14px;
+  font-size: 20px;
   cursor: pointer;
+  border-radius: 8px;
+  z-index: 1001;
 }
 
-.side-menu {
+/* ===== MENU LATERAL ===== */
+#side-menu {
   position: fixed;
   top: 0;
   left: -260px;
-  width: 250px;
+  width: 260px;
   height: 100%;
-  background: rgba(0,0,0,0.95);
-  padding-top: 60px;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  padding-top: 70px;
+  transition: 0.3s ease;
   z-index: 1000;
 }
 
-.side-menu.active {
-  left: 0;
-}
-
-.side-menu a {
+#side-menu a {
   display: block;
-  padding: 15px;
-  color: white;
+  padding: 15px 25px;
+  color: #000;
   text-decoration: none;
-  border-bottom: 1px solid #222;
+  font-weight: 600;
 }
 
-.side-menu a:hover {
-  background: red;
+#side-menu a:hover {
+  background: #000;
+  color: #fff;
 }
 
-/* Conteúdo */
+/* ===== CONTAINER ===== */
 .container {
-  padding: 80px 20px;
-  max-width: 800px;
-  margin: auto;
-  position: relative;
-  z-index: 1;
+  max-width: 900px;
+  margin: 120px auto 60px;
+  padding: 20px;
 }
 
+/* ===== CARDS ===== */
 .card {
-  background: rgba(0,0,0,0.7);
-  border: 1px solid #222;
-  border-radius: 10px;
-  padding: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 14px;
+  padding: 25px;
   margin-bottom: 20px;
 }
 
-.card.red {
-  border: 1px solid red;
-  box-shadow: 0 0 15px red;
+.card h1,
+.card h2 {
+  margin-bottom: 10px;
 }
 
-.btn {
-  background: red;
-  color: white;
+.card p,
+.card li {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===== BOTÕES ===== */
+button {
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: #ffffff;
+  color: #000;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 10px red;
+  transition: 0.2s ease;
 }
 
-.btn:hover {
-  filter: brightness(1.2);
+button:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ===== INPUTS ===== */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+  .container {
+    margin-top: 90px;
+  }
+
+  #menu-btn {
+    font-size: 18px;
+  }
 }
