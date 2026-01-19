@@ -3,64 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Vexyl's Place</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- PARTÍCULAS -->
 <canvas id="particles"></canvas>
 
-<!-- BOTÃO MENU -->
-<button id="menuBtn" class="menu-btn">☰</button>
+<button id="menu-btn">☰</button>
 
-<!-- MENU LATERAL -->
-<nav id="sideMenu" class="side-menu">
+<nav id="side-menu">
   <a href="index.html">Início</a>
-  <a href="#" class="private-link">Assinaturas</a>
-  <a href="#" class="private-link">Links</a>
-  <a href="#" class="private-link">Configurações</a>
-
-  <a href="login.html" id="loginLink">Login</a>
-<a href="registro.html" id="Registrolink">Registro</a>
-  <a href="#" id="logoutLink" style="display:none;">Logout</a>
+  <a href="login.html" class="guest">Login</a>
+  <a href="registro.html" class="guest">Registro</a>
+  <a href="assinaturas.html" class="locked">Assinaturas</a>
+  <a href="configuracoes.html" class="locked">Configurações</a>
+  <a href="#" id="logout" class="locked">Logout</a>
 </nav>
 
 <main class="container">
 
-  <!-- CARD PÚBLICO -->
   <div class="card glow">
     <h1>Olá! Seja bem-vind*</h1>
     <p>Explore histórias, projetos e conteúdos exclusivos.</p>
+    <small class="guest">🔒 Faça login para desbloquear tudo</small>
   </div>
 
-  <!-- AVISO BLOQUEADO -->
-  <div class="lock-msg">
-    🔒 Faça login ou se registre para acessar assinaturas, links e configurações  
-    <br><br>
-    <a href="login.html" class="btn">Entrar</a>
-<a href="registro.html" class="btn">Registrar</a>
+  <div class="card locked">
+    <h2>Assinaturas</h2>
+    <p>Conteúdo exclusivo para membros.</p>
   </div>
 
-  <!-- CONTEÚDO PRIVADO -->
-  <section class="private">
+  <div class="card locked">
+    <h2>Links</h2>
+    <a href="#">Canal</a>
+  </div>
 
-    <div class="card glow">
-      <h2>Assinaturas</h2>
-      <p>Conteúdo exclusivo para membros.</p>
-    </div>
-
-    <div class="card glow">
-      <h2>Links</h2>
-      <a class="btn" href="https://youtube.com" target="_blank">Canal</a>
-    </div>
-
-    <div class="card glow">
-      <h2>Configurações</h2>
-      <p>Configurações da conta.</p>
-    </div>
-
-  </section>
+  <div class="card locked">
+    <h2>Configurações</h2>
+    <p>Dados da sua conta.</p>
+  </div>
 
 </main>
 
