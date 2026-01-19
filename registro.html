@@ -8,18 +8,19 @@
 <body>
 
 <main class="container">
-  <div class="card">
+  <div class="card glow">
     <h2>Criar conta</h2>
 
-    <input id="nickInput" placeholder="Nome público">
-    <input id="telefoneInput" placeholder="Telefone">
-    <input id="emailInput" placeholder="Email">
-    <input id="passwordInput" type="password" placeholder="Senha">
+    <input id="nick" placeholder="Nome público (nick)">
+    <input id="nome" placeholder="Nome real">
+    <input id="telefone" placeholder="Telefone">
+    <input id="email" type="email" placeholder="Email">
+    <input id="senha" type="password" placeholder="Senha">
 
-    <button onclick="register()">Registrar</button>
+    <button id="registerBtn">Registrar</button>
   </div>
 </main>
 
-<script type="module" src="js/auth.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
